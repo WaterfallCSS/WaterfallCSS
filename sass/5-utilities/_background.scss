@@ -5,6 +5,12 @@
 	&bg-center {
 		background-position: center;
 	}
+	&bg-top {
+		background-position: top;
+	}
+	&bg-bottom {
+		background-position: bottom;
+	}
 	&bg-primary {
 		background-color: $color-primary;
 	}
@@ -13,7 +19,7 @@
 	}
 	@for $i from 0 through 10 {
 		&opacity-#{$i * 10} {
-			opacity: #{$i * 10}%;
+			opacity: $i / 10;
 		}
 	}
 }

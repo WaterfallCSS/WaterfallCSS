@@ -3,14 +3,12 @@
 @import "_display";
 @import "_flex";
 @import "_text";
-@import "_z-index";
 
 @mixin group() {
 	@include background();
 	@include display();
 	@include flex();
 	@include text();
-	@include z-index();
 }
 
 .u\: {
@@ -21,7 +19,7 @@
 	}
 }
 
-.u-lg\: {
+.u\@lg\: {
 	@include screen-large() {
 		@include group();
 
@@ -31,7 +29,7 @@
 	}
 }
 
-.u-md\: {
+.u\@md\: {
 	@include screen-medium() {
 		@include group();
 
@@ -41,7 +39,7 @@
 	}
 }
 
-.u-sm\: {
+.u\@sm\: {
 	@include screen-small() {
 		@include group();
 
@@ -51,7 +49,7 @@
 	}
 }
 
-.u-xs\: {
+.u\@xs\: {
 	@include screen-xsmall() {
 		@include group();
 

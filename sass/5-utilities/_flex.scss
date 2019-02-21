@@ -1,4 +1,9 @@
 @mixin flex() {
+	@for $i from 0 through 12 {
+		&w-#{$i}\/12 {
+			width: calc((100% / 12) * #{$i});
+		}
+	}
 	&flex {
 		display: flex;
 	}
@@ -24,7 +29,7 @@
 		&between {
 			justify-content: space-between;
 		}
-		&arpund {
+		&around {
 			justify-content: space-around;
 		}
 	}
@@ -35,9 +40,7 @@
 	&w-100 {
 		width: 100%;
 	}
-	@for $i from 0 through 12 {
-		&w-#{$i}\/12 {
-			width: calc((100% / 12) * #{$i});
-		}
+	&mw-100 {
+		max-width: 100%;
 	}
 }

@@ -1,23 +1,23 @@
 @mixin screen-xsmall() {
-	@media all and (min-width: $breakpoint-xsmall) {
+	@media all and (#{$media-query-prefix}-width: $breakpoint-xsmall) {
 		@content;
 	}
 }
 
 @mixin screen-small() {
-	@media all and (min-width: $breakpoint-small) {
+	@media all and (#{$media-query-prefix}-width: $breakpoint-small) {
 		@content;
 	}
 }
 
 @mixin screen-medium() {
-	@media all and (min-width: $breakpoint-medium) {
+	@media all and (#{$media-query-prefix}-width: $breakpoint-medium) {
 		@content;
 	}
 }
 
 @mixin screen-large() {
-	@media all and (min-width: $breakpoint-large) {
+	@media all and (#{$media-query-prefix}-width: $breakpoint-large) {
 		@content;
 	}
 }

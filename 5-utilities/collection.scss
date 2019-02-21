@@ -1,0 +1,62 @@
+@import "_spacing";
+@import "_background";
+@import "_display";
+@import "_flex";
+@import "_text";
+@import "_z-index";
+
+@mixin group() {
+	@include background();
+	@include display();
+	@include flex();
+	@include text();
+	@include z-index();
+}
+
+.u\: {
+	@include group();
+
+	@for $i from 0 through $loop-count {
+		@include spacing($i);
+	}
+}
+
+.u-lg\: {
+	@include screen-large() {
+		@include group();
+
+		@for $i from 0 through $loop-count {
+			@include spacing($i);
+		}
+	}
+}
+
+.u-md\: {
+	@include screen-medium() {
+		@include group();
+
+		@for $i from 0 through $loop-count {
+			@include spacing($i);
+		}
+	}
+}
+
+.u-sm\: {
+	@include screen-small() {
+		@include group();
+
+		@for $i from 0 through $loop-count {
+			@include spacing($i);
+		}
+	}
+}
+
+.u-xs\: {
+	@include screen-xsmall() {
+		@include group();
+
+		@for $i from 0 through $loop-count {
+			@include spacing($i);
+		}
+	}
+}

@@ -1,0 +1,13 @@
+ul {
+	list-style-type: disc;
+	padding-left: size(3);
+}
+ol {
+	list-style-type: decimal;
+	padding-left: size(3);
+}
+li {
+	& + li {
+		margin-top: size(2);
+	}
+}

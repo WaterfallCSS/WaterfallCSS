@@ -1,0 +1,3 @@
+@function size($num) {
+	@return #{(($num * 8) / 10)}rem;
+}

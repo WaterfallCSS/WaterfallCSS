@@ -1,0 +1,43 @@
+@mixin flex() {
+	&flex {
+		display: flex;
+	}
+	&flex-wrap {
+		flex-wrap: wrap;
+	}
+	&flex-col {
+		flex-direction: column;
+	}
+	&flex-1 {
+		flex: 1;
+	}
+	&justify- {
+		&start {
+			justify-content: flex-start;
+		}
+		&end {
+			justify-content: flex-end;
+		}
+		&center {
+			justify-content: center;
+		}
+		&between {
+			justify-content: space-between;
+		}
+		&arpund {
+			justify-content: space-around;
+		}
+	}
+	&items-center {
+		align-items: center;
+	}
+
+	&w-100 {
+		width: 100%;
+	}
+	@for $i from 0 through 12 {
+		&w-#{$i}\/12 {
+			width: calc((100% / 12) * #{$i});
+		}
+	}
+}

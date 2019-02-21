@@ -1,0 +1,7 @@
+@mixin z-index() {
+	@for $i from 0 through 5 {
+		&z-#{$i*10} {
+			z-index: $i * 10;
+		}
+	}
+}

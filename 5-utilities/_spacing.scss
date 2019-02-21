@@ -1,0 +1,55 @@
+@mixin spacing($i) {
+	&p-#{$i} {
+		padding-left: size($i);
+		padding-right: size($i);
+		padding-top: size($i);
+		padding-bottom: size($i);
+	}
+	&pt-#{$i} {
+		padding-top: size($i);
+	}
+	&pr-#{$i} {
+		padding-right: size($i);
+	}
+	&pb-#{$i} {
+		padding-bottom: size($i);
+	}
+	&pl-#{$i} {
+		padding-left: size($i);
+	}
+	&py-#{$i} {
+		padding-top: size($i);
+		padding-bottom: size($i);
+	}
+	&px-#{$i} {
+		padding-left: size($i);
+		padding-right: size($i);
+	}
+
+	&m-#{$i} {
+		margin-left: size($i);
+		margin-right: size($i);
+		margin-top: size($i);
+		margin-bottom: size($i);
+	}
+	&mt-#{$i} {
+		margin-top: size($i);
+	}
+	&mr-#{$i} {
+		margin-right: size($i);
+	}
+	&mb-#{$i} {
+		margin-bottom: size($i);
+	}
+	&ml-#{$i} {
+		margin-left: size($i);
+	}
+	&my-#{$i} {
+		margin-top: size($i);
+		margin-bottom: size($i);
+	}
+	&mx-#{$i} {
+		margin-left: size($i);
+		margin-right: size($i);
+	}
+}

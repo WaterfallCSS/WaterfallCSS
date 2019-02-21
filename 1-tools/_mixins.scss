@@ -1,0 +1,35 @@
+@mixin screen-xsmall() {
+	@media all and (min-width: $breakpoint-xsmall) {
+		@content;
+	}
+}
+
+@mixin screen-small() {
+	@media all and (min-width: $breakpoint-small) {
+		@content;
+	}
+}
+
+@mixin screen-medium() {
+	@media all and (min-width: $breakpoint-medium) {
+		@content;
+	}
+}
+
+@mixin screen-large() {
+	@media all and (min-width: $breakpoint-large) {
+		@content;
+	}
+}
+
+@mixin dimensions($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin absolute-center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

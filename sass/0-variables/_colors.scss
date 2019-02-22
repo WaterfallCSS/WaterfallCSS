@@ -1,5 +1,11 @@
-$color-primary: red;
-$color-secondary: blue;
+$color-primary: crimson;
+$color-secondary: cornflowerblue;
 
 $color-white: white;
-$color-grey: #e0e0e0;
+$color-grey: #929292;
+
+$color-loop-array: (
+	primary: $color-primary,
+	secondary: $color-secondary,
+	grey: $color-grey
+);

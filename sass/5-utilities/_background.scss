@@ -1,4 +1,5 @@
 @mixin background() {
+	// Background Positioning
 	&bg-cover {
 		background-size: cover;
 	}
@@ -11,12 +12,30 @@
 	&bg-bottom {
 		background-position: bottom;
 	}
-	&bg-primary {
-		background-color: $color-primary;
-	}
-	&bg-secondary {
-		background-color: $color-secondary;
-	}
+
+	@each $key, $val in $color-loop-array {
+  		&bg-#{$key} {
+			background-color: $val;
+
+			@for $i from 0 through 9 {
+				&-#{100 - ($i * 10)} {
+					background-color: lighten($val, $i * $color-range);
+				}
+			}
+
+			@for $i from 0 through 9 {
+				&-#{100 + ($i * 10)} {
+					background-color: darken($val, $i * $color-range);
+				}
+			}
+		}
+  	}
+
+  	&bg-white {
+  		background-color: $color-white;
+  	}
+
+	// Colours
 	@for $i from 0 through 10 {
 		&opacity-#{$i * 10} {
 			opacity: $i / 10;

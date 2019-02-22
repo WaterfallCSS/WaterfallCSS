@@ -1,27 +1,52 @@
 h1 {
+	font-size: 3.2rem;
 }
 h2 {
+	font-size: 2.8rem;
 }
 h3 {
+	font-size: 2.6rem;
 }
-h4 {
+h4, h5, h6 {
+	font-size: 2.2rem;
 }
-h5 {
-}
-h6 {
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: size(1);
 }
 
 p {
+	margin-bottom: size(3);
 }
 
 strong {
+	font-weight: 700;
 }
 
 em {
+	@extend .u\:bg-primary-10;
 }
 
 i {
+	font-style: italic;
 }
 
 a {
+	border-bottom: 2px solid $color-primary;
+}
+
+blockquote {
+	@extend .u\:border-l-6px;
+	@extend .u\:border-primary;
+	@extend .u\:py-1;
+	@extend .u\:pl-1;
+	font-style: italic;
+	font-size: 2.8rem;
+}
+
+hr {
+	border: 0;
+    height: 1px;
+    margin : size(4) 0;
+    background-color: $color-grey;
 }

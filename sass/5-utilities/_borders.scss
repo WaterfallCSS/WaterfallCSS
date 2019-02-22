@@ -1,0 +1,47 @@
+@mixin borders() {
+	@for $i from 1 through $border-width-range {
+		&border-#{$i}px {
+			border: #{$i}px solid;
+		}
+		&border-t-#{$i}px {
+			border-top: #{$i}px solid;
+		}
+		&border-r-#{$i}px {
+			border-bottom: #{$i}px solid;
+		}
+		&border-b-#{$i}px {
+			border-bottom: #{$i}px solid;
+		}
+		&border-l-#{$i}px {
+			border-left: #{$i}px solid;
+		}
+	}
+
+	@each $key, $val in $color-loop-array {
+  		&border-#{$key} {
+			border-color: $val;
+
+			@for $i from 0 through 9 {
+				&-#{100 - ($i * 10)} {
+					border-color: lighten($val, $i * $color-range);
+				}
+			}
+
+			@for $i from 0 through 9 {
+				&-#{100 + ($i * 10)} {
+					border-color: darken($val, $i * $color-range);
+				}
+			}
+		}
+  	}
+
+	@for $i from 1 through $border-radius-range {
+		&rounded-#{$i}px {
+			border-radius: #{$i}px;
+		}
+	}
+
+	&rounded-full {
+		border-radius: 50%;
+	}
+}

@@ -1,4 +1,7 @@
 @mixin background() {
+	@include generate-colors('bg', 'background-color');
+	@include generate-colors('fill', 'fill');
+	
 	// Background Positioning
 	&bg-cover {
 		background-size: cover;
@@ -13,14 +16,6 @@
 		background-position: bottom;
 	}
 
-	@include generate-colors('bg', 'background-color');
-	@include generate-colors('fill', 'fill');
-
-	&bg-white {
-		background-color: $color-white;
-	}
-
-	// Colours
 	@for $i from 0 through 10 {
 		&opacity-#{$i * 10} {
 			opacity: $i / 10;

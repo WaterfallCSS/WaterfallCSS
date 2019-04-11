@@ -1,4 +1,6 @@
 @mixin text() {
+	@include generate-colors('text', 'color');
+
 	&text-center {
 		text-align: center;
 	}
@@ -23,11 +25,5 @@
 
 	&text-xs {
 		font-size: 1.2rem;
-	}
-
-	@each $key, $val in $color-loop-array {
-		&text-#{$key} {
-			color: $val;
-		}
 	}
 }

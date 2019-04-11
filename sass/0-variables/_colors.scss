@@ -1,10 +1,16 @@
-$color-primary: #f66d9b;
-$color-secondary: #9561e2;
+$color-primary: #E2391D;
+$color-secondary: #299884;
+$color-tertiary: #29383D;
+$color-grey: hsl(0, 0, 30%);
+
 $color-white: white;
-$color-grey: hsl(0, 0, 40%);
+$color-black: black;
 
 $color-loop-array: (
 	primary: $color-primary,
 	secondary: $color-secondary,
-	grey: $color-grey
+	tertiary: $color-tertiary,
+	grey: $color-grey,
+	black: $color-black,
+	white: $color-white
 );

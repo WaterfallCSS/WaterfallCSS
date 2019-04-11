@@ -1,4 +1,6 @@
 @mixin borders() {
+	@include generate-colors('border', 'border-color');
+	
 	@for $i from 1 through $border-width-range {
 		&border-#{$i}px {
 			border: #{$i}px solid;
@@ -19,48 +21,6 @@
 
 	&border-none {
 		border: none;
-	}
-
-	@each $key, $val in $color-loop-array {
-		&border-#{$key} {
-			border-color: $val;
-
-			@for $i from 0 through 5 {
-				&-#{100 - ($i * 10)} {
-					@if saturation($val) < 1% {
-						border-color: hsl(
-							hue($val),
-							saturation($val),
-							lightness($val) + $i * ((95 - lightness($val)) / 5)
-						);
-					} @else {
-						border-color: hsl(
-							hue($val),
-							saturation($val) + $saturation-range,
-							lightness($val) + $i * ((95 - lightness($val)) / 5)
-						);
-					}
-				}
-			}
-
-			@for $i from 0 through 5 {
-				&-#{100+($i * 10)} {
-					@if saturation($val) < 1% {
-						border-color: hsl(
-							hue($val),
-							saturation($val),
-							lightness($val) - $i * (lightness($val) / 6)
-						);
-					} @else {
-						border-color: hsl(
-							hue($val),
-							saturation($val) - $saturation-range,
-							lightness($val) - $i * (lightness($val) / 6)
-						);
-					}
-				}
-			}
-		}
 	}
 
 	@for $i from 1 through $border-radius-range {

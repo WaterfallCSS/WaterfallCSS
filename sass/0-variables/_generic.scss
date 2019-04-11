@@ -3,12 +3,22 @@
 */
 
 $loop-count: 20;
-$color-range: 3;
+
+$color-range: 8;
+$saturation-range: 10;
+
+$minimum-color-lightness: 16;
+$maximum-color-lightness: 95;
+
+$dark-color-naming-array: ('dark', 'darker', 'darkest');
+
+$light-color-naming-array: ('light', 'lighter', 'lightest');
+
 $border-width-range: 6;
 $border-radius-range: 10;
 
 // Switch this to min / max to change the media queries
-$media-query-prefix: "max";
+$media-query-prefix: 'max';
 
 $container-width: 120rem;
 $container-margin: 4rem;

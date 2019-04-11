@@ -33,3 +33,34 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+// prettier-ignore
+@mixin generate-colors($prefix, $property) {
+	@each $key, $val in $color-loop-array {
+		&#{$prefix}-#{$key} {
+			#{$property}: $val;
+
+			@for $i from 1 through 3 {
+				&-#{nth($dark-color-naming-array, $i)} {
+					#{$property}: hsl(
+						hue($val),
+						saturation($val) - if(saturation($val) < 1%, 0, $saturation-range),
+						lightness($val) - $i * ((lightness($val) - $minimum-color-lightness) / 3)
+					);
+				}
+			}
+
+			@for $i from 1 through 3 {
+				&-#{nth($light-color-naming-array, $i)} {
+					#{$property}: hsl(
+						hue($val),
+						saturation($val) + if(saturation($val) < 1%, 0, $saturation-range),
+						lightness($val) +
+							$i *
+							(($maximum-color-lightness - lightness($val)) / 3)
+					);
+				}
+			}
+		}
+	}
+}

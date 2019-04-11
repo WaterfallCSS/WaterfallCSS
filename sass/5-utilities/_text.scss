@@ -17,10 +17,17 @@
 	&text-white {
 		color: white;
 	}
+	&underline {
+		text-decoration: underline;
+	}
+
+	&text-xs {
+		font-size: 1.2rem;
+	}
 
 	@each $key, $val in $color-loop-array {
-  		&text-#{$key} {
+		&text-#{$key} {
 			color: $val;
 		}
-  	}
+	}
 }

@@ -7,11 +7,18 @@ h2 {
 h3 {
 	font-size: 2.6rem;
 }
-h4, h5, h6 {
+h4,
+h5,
+h6 {
 	font-size: 2.2rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-bottom: size(1);
 }
 
@@ -24,7 +31,6 @@ strong {
 }
 
 em {
-	@extend .u\:bg-primary-10;
 }
 
 i {
@@ -36,17 +42,13 @@ a {
 }
 
 blockquote {
-	@extend .u\:border-l-6px;
-	@extend .u\:border-primary;
-	@extend .u\:py-1;
-	@extend .u\:pl-1;
 	font-style: italic;
 	font-size: 2.8rem;
 }
 
 hr {
 	border: 0;
-    height: 1px;
-    margin : size(4) 0;
-    background-color: $color-grey;
+	height: 1px;
+	margin: size(4) 0;
+	background-color: $color-grey;
 }

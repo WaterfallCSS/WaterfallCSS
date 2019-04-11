@@ -1,8 +1,7 @@
-$color-primary: crimson;
-$color-secondary: cornflowerblue;
-
+$color-primary: #f66d9b;
+$color-secondary: #9561e2;
 $color-white: white;
-$color-grey: #929292;
+$color-grey: hsl(0, 0, 40%);
 
 $color-loop-array: (
 	primary: $color-primary,

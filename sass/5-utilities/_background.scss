@@ -13,27 +13,12 @@
 		background-position: bottom;
 	}
 
-	@each $key, $val in $color-loop-array {
-  		&bg-#{$key} {
-			background-color: $val;
+	@include generate-colors('bg', 'background-color');
+	@include generate-colors('fill', 'fill');
 
-			@for $i from 0 through 9 {
-				&-#{100 - ($i * 10)} {
-					background-color: lighten($val, $i * $color-range);
-				}
-			}
-
-			@for $i from 0 through 9 {
-				&-#{100 + ($i * 10)} {
-					background-color: darken($val, $i * $color-range);
-				}
-			}
-		}
-  	}
-
-  	&bg-white {
-  		background-color: $color-white;
-  	}
+	&bg-white {
+		background-color: $color-white;
+	}
 
 	// Colours
 	@for $i from 0 through 10 {

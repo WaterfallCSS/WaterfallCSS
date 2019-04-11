@@ -33,8 +33,13 @@
 			justify-content: space-around;
 		}
 	}
-	&items-center {
-		align-items: center;
+	&items- {
+		&baseline {
+			align-items: baseline;
+		}
+		&center {
+			align-items: center;
+		}
 	}
 
 	&w-100 {

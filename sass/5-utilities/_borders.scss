@@ -1,6 +1,4 @@
-@mixin borders() {
-	@include generate-colors('border', 'border-color');
-	
+@mixin borders() {	
 	@for $i from 1 through $border-width-range {
 		&border-#{$i}px {
 			border: #{$i}px solid;
@@ -18,6 +16,8 @@
 			border-left: #{$i}px solid;
 		}
 	}
+
+	@include generate-colors('border', 'border-color');
 
 	&border-none {
 		border: none;

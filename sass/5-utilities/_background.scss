@@ -16,9 +16,9 @@
 		background-position: bottom;
 	}
 
-	@for $i from 0 through 10 {
-		&opacity-#{$i * 10} {
-			opacity: $i / 10;
+	@for $i from 0 through 5 {
+		&opacity-#{($i * 2) * 10} {
+			opacity: ($i * 2) / 10;
 		}
 	}
 }

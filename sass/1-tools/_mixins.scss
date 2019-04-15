@@ -68,3 +68,27 @@
 		}
 	}
 }
+
+@mixin color($property, $color, $suffix) {
+	$hex: map-get($color-loop-array, $color);
+
+	@if ($suffix != '') {
+		@if (contains($dark-color-naming-array, $suffix)) {
+			#{$property}: hsl(
+				hue($hex),
+				saturation($hex) - if(saturation($hex) < 1%, 0, $saturation-range),
+				lightness($hex) - index($dark-color-naming-array, $suffix) * ((lightness($hex) - $minimum-color-lightness) / 3)
+			);
+		} @else if (contains($light-color-naming-array, $suffix)) {
+			#{$property}: hsl(
+				hue($hex),
+				saturation($hex) + if(saturation($hex) < 1%, 0, $saturation-range),
+				lightness($hex) + index($light-color-naming-array, $suffix) * (($maximum-color-lightness - lightness($hex)) / 3)
+			);
+		} @else {
+			@warn "No colour variation matching suffix and colour";
+		}
+	} @else {
+		#{$property}: map-get($color-loop-array, $color);
+	}
+}

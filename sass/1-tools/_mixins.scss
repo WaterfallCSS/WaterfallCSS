@@ -34,61 +34,39 @@
 	transform: translate(-50%, -50%);
 }
 
-// prettier-ignore
+@mixin color($property, $color, $variation) {
+	$variations: map-get($color-loop-array, $color);
+	#{$property}: map-get($variations, $variation);
+}
+
 @mixin generate-colors($prefix, $property) {
-	@each $key, $val in $color-loop-array {
-		&#{$prefix}-#{$key} {
-			#{$property}: $val;
-
-			@if $key != black or $key != white {
-
-				@for $i from 1 through 3 {
-					&-#{nth($dark-color-naming-array, $i)} {
-						#{$property}: hsl(
-							hue($val),
-							saturation($val) - if(saturation($val) < 1%, 0, $saturation-range),
-							lightness($val) - $i * ((lightness($val) - $minimum-color-lightness) / 3)
-						);
-					}
-				}
-	
-				@for $i from 1 through 3 {
-					&-#{nth($light-color-naming-array, $i)} {
-						#{$property}: hsl(
-							hue($val),
-							saturation($val) + if(saturation($val) < 1%, 0, $saturation-range),
-							lightness($val) +
-								$i *
-								(($maximum-color-lightness - lightness($val)) / 3)
-						);
-					}
-				}
-
+	@each $name, $values in $color-loop-array {
+		@each $key, $val in $values {
+			&#{$prefix}-#{$name}-#{$key}  {
+				#{$property}: $val;
 			}
 		}
 	}
 }
 
-@mixin color($property, $color, $suffix) {
-	$hex: map-get($color-loop-array, $color);
+@mixin generate-heading($heading) {
+	$sizes: map-get($typography-loop, $heading);
+	
+	@each $key, $val in $sizes {
+		@if ($key == 'base') {
+			font-size: nth($val, 1);
 
-	@if ($suffix != '') {
-		@if (contains($dark-color-naming-array, $suffix)) {
-			#{$property}: hsl(
-				hue($hex),
-				saturation($hex) - if(saturation($hex) < 1%, 0, $saturation-range),
-				lightness($hex) - index($dark-color-naming-array, $suffix) * ((lightness($hex) - $minimum-color-lightness) / 3)
-			);
-		} @else if (contains($light-color-naming-array, $suffix)) {
-			#{$property}: hsl(
-				hue($hex),
-				saturation($hex) + if(saturation($hex) < 1%, 0, $saturation-range),
-				lightness($hex) + index($light-color-naming-array, $suffix) * (($maximum-color-lightness - lightness($hex)) / 3)
-			);
+			@if (length($val) > 1) {
+				margin-bottom: size(nth($val, 2));
+			}
 		} @else {
-			@warn "No colour variation matching suffix and colour";
+			@media all and (#{$media-query-prefix}-width: $key) {
+				font-size: nth($val, 1);
+				
+				@if (length($val) > 1) {
+					margin-bottom: size(nth($val, 2));
+				}
+			}
 		}
-	} @else {
-		#{$property}: map-get($color-loop-array, $color);
 	}
 }

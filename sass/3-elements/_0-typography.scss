@@ -1,5 +1,5 @@
 h1 {
-  
+	@include color('color', 'primary', 100);
 }
 h2 {
 }
@@ -16,20 +16,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-secondary;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.4px;
+	font-family: $font-secondary;
+	font-weight: 700;
+	line-height: 1.1;
+	letter-spacing: -0.4px;
 
-  a {
-    text-decoration: none;
-  }
+	a {
+		text-decoration: none;
+	}
 }
 
 p {
 }
 
 a {
-  text-decoration: underline;
-  font-weight: 600;
+	text-decoration: underline;
+	font-weight: 600;
 }

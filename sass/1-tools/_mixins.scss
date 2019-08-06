@@ -42,7 +42,7 @@
 @mixin generate-colors($prefix, $property) {
 	@each $name, $values in $color-loop-array {
 		@each $key, $val in $values {
-			&#{$prefix}-#{$name}-#{$key}  {
+			&#{$prefix}-#{$name}-#{$key} {
 				#{$property}: $val;
 			}
 		}
@@ -51,7 +51,7 @@
 
 @mixin generate-heading($heading) {
 	$sizes: map-get($typography-loop, $heading);
-	
+
 	@each $key, $val in $sizes {
 		@if ($key == 'base') {
 			font-size: nth($val, 1);
@@ -62,7 +62,7 @@
 		} @else {
 			@media all and (#{$media-query-prefix}-width: $key) {
 				font-size: nth($val, 1);
-				
+
 				@if (length($val) > 1) {
 					margin-bottom: size(nth($val, 2));
 				}

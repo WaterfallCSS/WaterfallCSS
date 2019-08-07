@@ -1,3 +1,4 @@
+// Breakpoint mixins
 @mixin screen-xsmall() {
   @media all and (#{$media-query-prefix}-width: $breakpoint-xsmall) {
     @content;
@@ -22,11 +23,16 @@
   }
 }
 
+/* 
+  Define width x height in one line
+  @include dimensions(size(3), size(8));
+*/
 @mixin dimensions($width, $height) {
   width: $width;
   height: $height;
 }
 
+// Position an element vertically and horizontally central without knowing its width or height
 @mixin absolute-center() {
   position: absolute;
   top: 50%;
@@ -34,10 +40,7 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin shadow($variation) {
-  box-shadow: unquote(map-get($shadow-loop-array, $variation));
-}
-
+// Used to generate utility classes for all colours
 @mixin generate-colors($prefix, $property) {
   @each $name, $values in $color-loop-array {
     @if (length($values) > 1) {

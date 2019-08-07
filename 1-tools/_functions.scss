@@ -6,3 +6,7 @@
   $variations: map-get($color-loop-array, $color);
   @return map-get($variations, $variation);
 }
+
+@function shadow($variation) {
+  @return unquote(map-get($shadow-loop-array, $variation));
+}

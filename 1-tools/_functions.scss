@@ -1,3 +1,8 @@
 @function size($num) {
-	@return #{(($num * 8) / 10)}rem;
+  @return #{(($num * 8) / 10)}rem;
+}
+
+@function color($color, $variation) {
+  $variations: map-get($color-loop-array, $color);
+  @return map-get($variations, $variation);
 }

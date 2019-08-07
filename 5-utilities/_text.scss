@@ -1,29 +1,37 @@
 @mixin text() {
-	@include generate-colors('text', 'color');
+  @include generate-colors('text', 'color');
 
-	&text-center {
-		text-align: center;
-	}
-	&text-left {
-		text-align: left;
-	}
-	&text-right {
-		text-align: right;
-	}
-	&text-capitalize {
-		text-transform: capitalize;
-	}
-	&text-uppercase {
-		text-transform: uppercase;
-	}
-	&text-white {
-		color: white;
-	}
-	&underline {
-		text-decoration: underline;
-	}
+  &text- {
+    &center {
+      text-align: center;
+    }
+    &left {
+      text-align: left;
+    }
+    &right {
+      text-align: right;
+    }
+    &capitalize {
+      text-transform: capitalize;
+    }
+    &uppercase {
+      text-transform: uppercase;
+    }
+    &lowercase {
+      text-transform: lowercase;
+    }
+    &underline {
+      text-decoration: underline;
+    }
+    &bold {
+      font-weight: bold;
+    }
+  }
 
-	&text-xs {
-		font-size: 1.2rem;
-	}
+  &font-monospace {
+    font-family: monospace;
+  }
+  &font-medium {
+    font-weight: 600;
+  }
 }

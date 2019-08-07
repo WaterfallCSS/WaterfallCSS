@@ -1,9 +1,18 @@
 .row {
-	display: flex;
-	flex-wrap: wrap;
-	width: calc(100% + #{$container-margin / 2});
-	margin-left: -#{$container-margin / 4};
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + #{$container-margin});
+  margin-left: -#{$container-margin / 2};
+
+  @include screen-medium() {
+    width: calc(100% + #{$container-margin / 2});
+    margin-left: -#{$container-margin / 4};
+  }
 }
 .col {
-	padding: #{$container-margin / 4};
+  padding: 0 #{$container-margin / 2};
+
+  @include screen-medium() {
+    padding: 0 #{$container-margin / 4};
+  }
 }

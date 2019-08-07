@@ -1,45 +1,47 @@
-@import "_spacing";
-@import "_background";
-@import "_borders";
-@import "_display";
-@import "_flex";
-@import "_text";
-@import "_shadows";
+@import '_spacing';
+@import '_background';
+@import '_display';
+@import '_flex';
+@import '_text';
+@import '_shadow';
+@import '_sizing';
+@import '_overflow';
 
 @mixin group() {
-	@include background();
-	@include display();
-	@include flex();
-	@include text();
-	@include borders();
-	@include shadows();
-	@include spacing();
+  @include background();
+  @include display();
+  @include flex();
+  @include text();
+  @include shadow();
+  @include spacing();
+  @include sizing();
+  @include overflow();
 }
 
 .u\: {
-	@include group();
+  @include group();
 }
 
 .u\@lg\: {
-	@include screen-large() {
-		@include group();
-	}
+  @include screen-large() {
+    @include group();
+  }
 }
 
 .u\@md\: {
-	@include screen-medium() {
-		@include group();
-	}
+  @include screen-medium() {
+    @include group();
+  }
 }
 
 .u\@sm\: {
-	@include screen-small() {
-		@include group();
-	}
+  @include screen-small() {
+    @include group();
+  }
 }
 
 .u\@xs\: {
-	@include screen-xsmall() {
-		@include group();
-	}
+  @include screen-xsmall() {
+    @include group();
+  }
 }

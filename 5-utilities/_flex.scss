@@ -1,51 +1,78 @@
 @mixin flex() {
-	@for $i from 0 through 12 {
-		&w-#{$i}\/12 {
-			width: calc((100% / 12) * #{$i});
-		}
-	}
-	&flex {
-		display: flex;
-	}
-	&flex-wrap {
-		flex-wrap: wrap;
-	}
-	&flex-col {
-		flex-direction: column;
-	}
-	&flex-1 {
-		flex: 1;
-	}
-	&justify- {
-		&start {
-			justify-content: flex-start;
-		}
-		&end {
-			justify-content: flex-end;
-		}
-		&center {
-			justify-content: center;
-		}
-		&between {
-			justify-content: space-between;
-		}
-		&around {
-			justify-content: space-around;
-		}
-	}
-	&items- {
-		&baseline {
-			align-items: baseline;
-		}
-		&center {
-			align-items: center;
-		}
-	}
+  // Generate 12 column based widths e.g. 4/12
+  @for $i from 0 through 12 {
+    &w-#{$i}\/12 {
+      width: calc((100% / 12) * #{$i});
+    }
+  }
 
-	&w-100 {
-		width: 100%;
-	}
-	&mw-100 {
-		max-width: 100%;
-	}
+  &w-full {
+    width: 100%;
+  }
+  &mw-full {
+    max-width: 100%;
+  }
+
+  &flex {
+    display: flex;
+  }
+  &flex- {
+    &wrap {
+      flex-wrap: wrap;
+    }
+    &nowrap {
+      flex-wrap: nowrap;
+    }
+    &col {
+      flex-direction: column;
+    }
+    &row {
+      flex-direction: row;
+    }
+    &1 {
+      flex: 1;
+    }
+    &auto {
+      flex: auto;
+    }
+  }
+
+  &justify- {
+    &start {
+      justify-content: flex-start;
+    }
+    &end {
+      justify-content: flex-end;
+    }
+    &center {
+      justify-content: center;
+    }
+    &between {
+      justify-content: space-between;
+    }
+    &around {
+      justify-content: space-around;
+    }
+  }
+
+  &items- {
+    &baseline {
+      align-items: baseline;
+    }
+    &center {
+      align-items: center;
+    }
+    &end {
+      align-items: flex-end;
+    }
+    &start {
+      align-items: flex-start;
+    }
+  }
+  &flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+  &flex-col-reverse {
+    flex-direction: column-reverse;
+  }
 }

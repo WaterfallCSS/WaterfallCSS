@@ -1,64 +1,52 @@
 @mixin spacing() {
-	&m-auto {
-		margin: auto;
-	}
-	&mx-auto {
-		margin-left: auto;
-		margin-right: auto;
-	}
-	@for $i from 0 through $loop-count {
-		&p-#{$i} {
-			padding-left: size($i);
-			padding-right: size($i);
-			padding-top: size($i);
-			padding-bottom: size($i);
-		}
-		&pt-#{$i} {
-			padding-top: size($i);
-		}
-		&pr-#{$i} {
-			padding-right: size($i);
-		}
-		&pb-#{$i} {
-			padding-bottom: size($i);
-		}
-		&pl-#{$i} {
-			padding-left: size($i);
-		}
-		&py-#{$i} {
-			padding-top: size($i);
-			padding-bottom: size($i);
-		}
-		&px-#{$i} {
-			padding-left: size($i);
-			padding-right: size($i);
-		}
+  &m-auto {
+    margin: auto;
+  }
+  &mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 
-		&m-#{$i} {
-			margin-left: size($i);
-			margin-right: size($i);
-			margin-top: size($i);
-			margin-bottom: size($i);
-		}
-		&mt-#{$i} {
-			margin-top: size($i);
-		}
-		&mr-#{$i} {
-			margin-right: size($i);
-		}
-		&mb-#{$i} {
-			margin-bottom: size($i);
-		}
-		&ml-#{$i} {
-			margin-left: size($i);
-		}
-		&my-#{$i} {
-			margin-top: size($i);
-			margin-bottom: size($i);
-		}
-		&mx-#{$i} {
-			margin-left: size($i);
-			margin-right: size($i);
-		}
-	}
+  @for $i from 0 through $loop-count {
+    &p-#{$i} {
+      padding: size($i);
+    }
+    &m-#{$i} {
+      margin: size($i);
+    }
+
+    @each $key in ('top', 'right', 'bottom', 'left') {
+      &m#{str-slice($key, 1, 1)}-#{$i} {
+        margin-#{$key}: size($i);
+      }
+      &p#{str-slice($key, 1, 1)}-#{$i} {
+        padding-#{$key}: size($i);
+      }
+    }
+
+    @each $key in ('x', 'y') {
+      &m#{$key}-#{$i} {
+        @if ($key == 'x') {
+          margin-left: size($i);
+          margin-right: size($i);
+        } @else {
+          margin-top: size($i);
+          margin-bottom: size($i);
+        }
+      }
+      &p#{$key}-#{$i} {
+        @if ($key == 'x') {
+          padding-left: size($i);
+          padding-right: size($i);
+        } @else {
+          padding-top: size($i);
+          padding-bottom: size($i);
+        }
+      }
+    }
+  }
 }

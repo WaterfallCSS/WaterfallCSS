@@ -1,8 +1,20 @@
-label {
-}
-
-input {
-}
-
+input,
 select {
+  // Aria / States
+  &:focus {
+    border-color: color('primary', 700);
+  }
+
+  &[aria-invalid='true'] {
+    border-color: color('red', 500);
+    background-color: color('red', 200);
+
+    &::placeholder {
+      color: color('grey', 700);
+    }
+  }
+}
+
+select::-ms-expand {
+  display: none;
 }

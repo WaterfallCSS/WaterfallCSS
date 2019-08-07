@@ -1,35 +1,112 @@
 h1 {
-	@include color('color', 'primary', 100);
+	font-family: $font-primary;
+	font-size: 4rem;
+	font-weight: 700;
+	line-height: 1.2;
 }
 h2 {
+	font-family: $font-primary;
+	font-size: 3.2rem;
+	font-weight: 700;
+	line-height: 1.2;
 }
 h3 {
+	font-family: $font-primary;
+	font-weight: 600;
+	font-size: 2.4rem;
+	line-height: 1.2;
 }
-h4,
-h5,
-h6 {
+h4 {
+	font-family: $font-primary;
+	font-weight: 600;
+	font-size: 2rem;
+	line-height: 1.2;
 }
 
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
-	font-family: $font-secondary;
-	font-weight: 700;
-	line-height: 1.1;
-	letter-spacing: -0.4px;
-
-	a {
-		text-decoration: none;
-	}
+h4 {
+	margin-bottom: size(1);
 }
 
 p {
+	line-height: 1.6;
+	font-weight: 400;
+	color: color('grey', 800);
+	margin-bottom: size(3);
 }
 
 a {
 	text-decoration: underline;
 	font-weight: 600;
+	color: color('teal', 500);
+
+	&:hover {
+		color: color('teal', 800);
+	}
+}
+
+ul {
+	list-style-type: disc;
+	padding-left: size(3);
+	margin-bottom: size(3);
+}
+ol {
+	list-style-type: decimal;
+	padding-left: size(3);
+	margin-bottom: size(3);
+}
+li {
+	margin-bottom: size(1);
+}
+
+pre {
+	margin-bottom: size(3);
+}
+code {
+	border-radius: 4px;
+}
+
+table {
+	width: 100%;
+	display: table;
+	text-align: left;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: size(3);
+
+	th {
+	}
+	tr {
+		border-top: 1px solid color('grey', 400);
+
+		background-color: color('grey', 200);
+
+		&:nth-child(odd) {
+			background-color: color('grey', 100);
+		}
+	}
+	th {
+		background-color: color('grey', 900);
+		color: color('grey', 100);
+		padding: size(1);
+		font-size: 1.4rem;
+		font-weight: 400;
+	}
+	td {
+		font-size: 1.4rem;
+		padding: size(1);
+
+		& + td {
+			border-left: 1px solid color('grey', 400);
+		}
+	}
+}
+
+hr {
+	background-color: color('grey', 200);
+	height: 1px;
+	width: 100%;
+	margin: size(3) 0;
 }

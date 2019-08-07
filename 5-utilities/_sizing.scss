@@ -1,0 +1,25 @@
+@mixin sizing() {
+  &min-h-screen {
+    min-height: 100vh;
+  }
+  &h-screen {
+    height: 100vh;
+  }
+  &min-h-full {
+    min-height: 100%;
+  }
+  &w-auto {
+    width: auto;
+  }
+  &w-100 {
+    width: 100%;
+  }
+  &mw-100 {
+    max-width: 100%;
+  }
+  @for $i from 0 through $loop-count {
+    &w-#{$i} {
+      width: size($i * 2);
+    }
+  }
+}

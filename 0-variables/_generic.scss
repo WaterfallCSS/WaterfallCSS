@@ -1,22 +1,19 @@
 /**
-* This file defines the generic vaiables
+* This file defines the generic variables used throughout the config
 */
 
+// How many times should the loops that generate sizes in 0.8rem / 8px increments be looped.
 $loop-count: 20;
 
-$saturation-range: 10;
-
-$minimum-color-lightness: 10;
-$maximum-color-lightness: 90;
-
-$dark-color-naming-array: ('dark', 'darker', 'darkest');
-$light-color-naming-array: ('light', 'lighter', 'lightest');
-
-$border-width-range: 6;
-$border-radius-range: 10;
-
 // Switch this to min / max to change the media queries
-$media-query-prefix: 'min';
+$media-query-prefix: 'max';
 
-$container-width: 120rem;
+// The container width is the maximum site width for the content
+$container-width: 1024px;
+
+/*
+    The container margin is the spacing either side of the container
+    when the browser is less than the maximum container width
+    Note: the container margin is divided by two and split either side
+*/
 $container-margin: 4rem;

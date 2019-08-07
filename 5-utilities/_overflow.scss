@@ -1,0 +1,8 @@
+@mixin overflow() {
+  &overflow-hidden {
+    overflow: hidden;
+  }
+  &overflow-y-scroll {
+    overflow-y: scroll;
+  }
+}

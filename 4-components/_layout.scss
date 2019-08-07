@@ -1,9 +1,34 @@
 .container {
-	width: calc(100% - (#{$container-margin} * 2));
-	max-width: $container-width;
-	margin: 0 auto;
+  width: calc(100% - (#{$container-margin} * 2));
+  max-width: $container-width;
+  margin: 0 auto;
 
-	&--full {
-		width: 100%;
-	}
+  &--full {
+    max-width: 100%;
+    width: 100%;
+  }
+  &--small {
+    max-width: 46rem;
+  }
+  &--medium {
+    max-width: 72rem;
+  }
+
+  @include screen-medium() {
+    width: calc(100% - #{$container-margin});
+  }
+}
+
+#__nuxt,
+#__layout {
+  min-height: 100vh;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }

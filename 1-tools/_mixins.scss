@@ -1,72 +1,55 @@
 @mixin screen-xsmall() {
-	@media all and (#{$media-query-prefix}-width: $breakpoint-xsmall) {
-		@content;
-	}
+  @media all and (#{$media-query-prefix}-width: $breakpoint-xsmall) {
+    @content;
+  }
 }
 
 @mixin screen-small() {
-	@media all and (#{$media-query-prefix}-width: $breakpoint-small) {
-		@content;
-	}
+  @media all and (#{$media-query-prefix}-width: $breakpoint-small) {
+    @content;
+  }
 }
 
 @mixin screen-medium() {
-	@media all and (#{$media-query-prefix}-width: $breakpoint-medium) {
-		@content;
-	}
+  @media all and (#{$media-query-prefix}-width: $breakpoint-medium) {
+    @content;
+  }
 }
 
 @mixin screen-large() {
-	@media all and (#{$media-query-prefix}-width: $breakpoint-large) {
-		@content;
-	}
+  @media all and (#{$media-query-prefix}-width: $breakpoint-large) {
+    @content;
+  }
 }
 
 @mixin dimensions($width, $height) {
-	width: $width;
-	height: $height;
+  width: $width;
+  height: $height;
 }
 
 @mixin absolute-center() {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-@mixin color($property, $color, $variation) {
-	$variations: map-get($color-loop-array, $color);
-	#{$property}: map-get($variations, $variation);
+@mixin shadow($variation) {
+  box-shadow: unquote(map-get($shadow-loop-array, $variation));
 }
 
 @mixin generate-colors($prefix, $property) {
-	@each $name, $values in $color-loop-array {
-		@each $key, $val in $values {
-			&#{$prefix}-#{$name}-#{$key} {
-				#{$property}: $val;
-			}
-		}
-	}
-}
-
-@mixin generate-heading($heading) {
-	$sizes: map-get($typography-loop, $heading);
-
-	@each $key, $val in $sizes {
-		@if ($key == 'base') {
-			font-size: nth($val, 1);
-
-			@if (length($val) > 1) {
-				margin-bottom: size(nth($val, 2));
-			}
-		} @else {
-			@media all and (#{$media-query-prefix}-width: $key) {
-				font-size: nth($val, 1);
-
-				@if (length($val) > 1) {
-					margin-bottom: size(nth($val, 2));
-				}
-			}
-		}
-	}
+  @each $name, $values in $color-loop-array {
+    @if (length($values) > 1) {
+      @each $key, $val in $values {
+        &#{$prefix}-#{$name}-#{$key} {
+          #{$property}: $val;
+        }
+      }
+    } @else {
+      &#{$prefix}-#{$name} {
+        #{$property}: $values;
+      }
+    }
+  }
 }

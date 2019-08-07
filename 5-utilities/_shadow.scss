@@ -1,0 +1,7 @@
+@mixin shadow() {
+  @each $name, $value in $shadow-loop-array {
+    &shadow-#{$name} {
+      box-shadow: unquote($value);
+    }
+  }
+}

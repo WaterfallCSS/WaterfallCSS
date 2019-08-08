@@ -56,3 +56,27 @@
     }
   }
 }
+
+@mixin generate-headings($prefix: '', $ratio: 1) {
+  $h6: $body-font-size;
+  $h5: $h6 * $ratio;
+  $h4: $h5 * $ratio;
+  $h3: $h4 * $ratio;
+  $h2: $h3 * $ratio;
+  $h1: $h2 * $ratio;
+
+  $heading-font-sizes: (
+    1: #{$h1}rem,
+    2: #{$h2}rem,
+    3: #{$h3}rem,
+    4: #{$h4}rem,
+    5: #{$h5}rem,
+    6: #{$h6}rem
+  );
+
+  @for $i from 1 to 7 {
+    #{$prefix}h#{$i} {
+      font-size: map-get($heading-font-sizes, $i);
+    }
+  }
+}

@@ -7,11 +7,11 @@
     max-width: 100%;
     width: 100%;
   }
-  &--small {
-    max-width: 46rem;
-  }
   &--medium {
-    max-width: 72rem;
+    max-width: ($container-width / 3) * 2;
+  }
+  &--small {
+    max-width: $container-width / 3;
   }
 
   @include screen-medium() {

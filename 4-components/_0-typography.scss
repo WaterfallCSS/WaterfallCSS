@@ -1,15 +1,3 @@
-.h1 {
-  @extend h1;
-}
-.h2 {
-  @extend h2;
-}
-.h3 {
-  @extend h3;
-}
-.h4 {
-  @extend h4;
-}
 .p1 {
   @extend p;
 }
@@ -24,4 +12,24 @@
 .p4 {
   @extend p;
   font-size: 1.2rem;
+}
+
+.content {
+  @include generate-headings('', $content-type-scale);
+
+  * {
+    margin-bottom: size(3);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: size(1);
+  }
+  blockquote {
+    margin-top: size(5);
+    margin-bottom: size(5);
+  }
 }

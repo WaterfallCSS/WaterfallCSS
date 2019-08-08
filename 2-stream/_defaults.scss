@@ -11,15 +11,12 @@ body {
 *,
 *::before,
 *::after {
-  border-width: 0;
-  border-style: solid;
-  border-color: #e2e8f0;
   box-sizing: border-box;
   position: relative;
 }
 
 img {
-  border-style: solid;
+  min-width: 100%;
 }
 
 textarea {
@@ -102,4 +99,8 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+::selection {
+  background-color: color('primary', 200);
 }

@@ -1,10 +1,10 @@
 html {
-	font-family: $font-primary;
-	color: black;
-	font-size: $root-font-size;
-	font-weight: normal;
+  font-family: $font-primary;
+  color: color('grey', 900);
+  font-size: $root-font-size;
+  font-weight: normal;
 }
 body {
-	font-size: 1.8rem;
-	line-height: 1.6;
+  font-size: #{$body-font-size}rem;
+  line-height: 1.6;
 }

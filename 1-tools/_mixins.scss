@@ -57,7 +57,7 @@
   }
 }
 
-@mixin generate-headings($prefix: '', $ratio: 1) {
+@mixin generate-headings($utility: false, $ratio: $type-scale) {
   $h6: $body-font-size;
   $h5: $h6 * $ratio;
   $h4: $h5 * $ratio;
@@ -74,9 +74,25 @@
     6: #{$h6}rem
   );
 
+  $prefix: '';
+
+  @if ($utility) {
+    $prefix: '&';
+  }
+
   @for $i from 1 to 7 {
     #{$prefix}h#{$i} {
       font-size: map-get($heading-font-sizes, $i);
+
+      @if ($utility == false) {
+        @include screen-medium() {
+          font-size: map-get($heading-font-sizes, $i + 1);
+        }
+
+        @include screen-small() {
+          font-size: map-get($heading-font-sizes, $i + 2);
+        }
+      }
     }
   }
 }

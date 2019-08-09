@@ -15,11 +15,8 @@
 }
 
 .content {
-  @include generate-headings('', $content-type-scale);
+  @include generate-headings(false, $content-type-scale);
 
-  * {
-    margin-bottom: size(3);
-  }
   h1,
   h2,
   h3,
@@ -28,8 +25,16 @@
   h6 {
     margin-bottom: size(1);
   }
-  blockquote {
+  blockquote,
+  figure {
     margin-top: size(5);
+    margin-bottom: size(5);
+  }
+  p {
+    margin-bottom: size(3);
+  }
+  ul,
+  ol {
     margin-bottom: size(5);
   }
 }

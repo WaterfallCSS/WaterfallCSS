@@ -9,7 +9,7 @@ h6 {
   font-family: $font-primary;
 }
 
-@include generate-headings(false, $type-scale);
+@include generate-headings(false, $heading-type-scale);
 
 p {
   line-height: 1.6;

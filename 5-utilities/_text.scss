@@ -1,6 +1,7 @@
 @mixin text() {
   @include generate-colors('text', 'color');
   @include generate-headings(true);
+  @include generate-paragraphs(true);
 
   &text- {
     &center {

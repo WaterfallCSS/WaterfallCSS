@@ -57,7 +57,8 @@
   }
 }
 
-@mixin generate-headings($utility: false, $ratio: $type-scale) {
+@mixin generate-headings($utility: false, $ratio: $heading-type-scale) {
+  // Remove the following logic and hardcode the values below, if you wish.
   $h6: $body-font-size;
   $h5: $h6 * $ratio;
   $h4: $h5 * $ratio;
@@ -91,6 +92,43 @@
 
         @include screen-small() {
           font-size: map-get($heading-font-sizes, $i + 2);
+        }
+      }
+    }
+  }
+}
+
+@mixin generate-paragraphs($utility: false) {
+  // Remove the following logic and hardcode the values below, if you wish.
+  $p: $body-font-size;
+  $p-sm: $p / $content-type-scale;
+  $p-xs: $p-sm / $content-type-scale;
+  $p-xxs: $p-xs / $content-type-scale;
+
+  $paragraph-font-sizes: (
+    'p': #{$p}rem,
+    'p-sm': #{$p-sm}rem,
+    'p-xs': #{$p-xs}rem,
+    'p-xxs': #{$p-xxs}rem
+  );
+
+  $prefix: '.';
+
+  @if ($utility) {
+    $prefix: '&';
+  }
+
+  @each $key, $value in $paragraph-font-sizes {
+    #{$prefix}#{$key} {
+      font-size: $value;
+
+      @if ($utility == false) {
+        @include screen-medium() {
+          font-size: $value;
+        }
+
+        @include screen-small() {
+          font-size: $value;
         }
       }
     }

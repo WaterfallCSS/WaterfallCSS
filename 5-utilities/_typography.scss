@@ -1,0 +1,71 @@
+@mixin typography() {
+  @include generate-colors('text', 'color');
+  @include generate-headings(true);
+  @include generate-paragraphs(true);
+
+  &text- {
+    &left {
+      text-align: left;
+    }
+    &center {
+      text-align: center;
+    }
+    &right {
+      text-align: right;
+    }
+    &capitalize {
+      text-transform: capitalize;
+    }
+    &uppercase {
+      text-transform: uppercase;
+    }
+    &lowercase {
+      text-transform: lowercase;
+    }
+    &underline {
+      text-decoration: underline;
+    }
+    &no-decoration {
+      text-decoration: none;
+    }
+  }
+
+  &font- {
+    &serif {
+      font-family: $font-serif;
+    }
+    &font-sans-serif {
+      font-family: $font-sans-serif;
+    }
+    &monospace {
+      font-family: $font-monospace;
+    }
+    &hairline {
+      font-weight: 100;
+    }
+    &thin {
+      font-weight: 200;
+    }
+    &light {
+      font-weight: 300;
+    }
+    &normal {
+      font-weight: 400;
+    }
+    &medium {
+      font-weight: 500;
+    }
+    &semibold {
+      font-weight: 600;
+    }
+    &bold {
+      font-weight: 700;
+    }
+    &extrabold {
+      font-weight: 800;
+    }
+    &black {
+      font-weight: 900;
+    }
+  }
+}

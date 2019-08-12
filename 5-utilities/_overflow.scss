@@ -1,8 +1,22 @@
 @mixin overflow() {
-  &overflow-hidden {
-    overflow: hidden;
-  }
-  &overflow-y-scroll {
-    overflow-y: scroll;
+  &overflow- {
+    &hidden {
+      overflow: hidden;
+    }
+    &x-hidden {
+      overflow-x: hidden;
+    }
+    &y-hidden {
+      overflow-y: hidden;
+    }
+    &scroll {
+      overflow: scroll;
+    }
+    &y-scroll {
+      overflow-y: scroll;
+    }
+    &x-scroll {
+      overflow-x: scroll;
+    }
   }
 }

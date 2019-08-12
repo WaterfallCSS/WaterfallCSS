@@ -1,6 +1,15 @@
 @mixin spacing() {
-  &m-auto {
-    margin: auto;
+  // Auto spacings
+  &m- {
+    &auto {
+      margin: auto;
+    }
+    &left {
+      margin-left: auto;
+    }
+    &right {
+      margin-right: auto;
+    }
   }
   &mx-auto {
     margin-left: auto;

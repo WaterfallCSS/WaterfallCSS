@@ -1,16 +1,9 @@
 @mixin flex() {
   // Generate 12 column based widths e.g. 4/12
-  @for $i from 0 through 12 {
+  @for $i from 1 through 12 {
     &w-#{$i}\/12 {
       width: calc((100% / 12) * #{$i});
     }
-  }
-
-  &w-full {
-    width: 100%;
-  }
-  &mw-full {
-    max-width: 100%;
   }
 
   &flex {
@@ -26,14 +19,20 @@
     &col {
       flex-direction: column;
     }
+    &col-reverse {
+      flex-direction: column-reverse;
+    }
     &row {
       flex-direction: row;
     }
-    &1 {
-      flex: 1;
+    &row-reverse {
+      flex-direction: row-reverse;
     }
-    &auto {
-      flex: auto;
+    &1 {
+      flex: 1 1 0%;
+    }
+    &initial {
+      flex: 0 1 auto;
     }
   }
 
@@ -68,11 +67,5 @@
     &start {
       align-items: flex-start;
     }
-  }
-  &flex-row-reverse {
-    flex-direction: row-reverse;
-  }
-  &flex-col-reverse {
-    flex-direction: column-reverse;
   }
 }

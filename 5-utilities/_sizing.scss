@@ -1,25 +1,53 @@
 @mixin sizing() {
-  &min-h-screen {
-    min-height: 100vh;
-  }
-  &h-screen {
-    height: 100vh;
-  }
-  &min-h-full {
-    min-height: 100%;
-  }
-  &w-auto {
-    width: auto;
-  }
-  &w-100 {
-    width: 100%;
-  }
-  &mw-100 {
-    max-width: 100%;
-  }
+  // Creates a set of size classes based on the 8px increments.
+  // The widths are 2x to give a wider range of options
+  // e.g. u:w-5 = width: 5 * (8 * 2) or width: 8rem
   @for $i from 0 through $loop-count {
     &w-#{$i} {
       width: size($i * 2);
+    }
+    &max-w-#{$i} {
+      max-width: size($i * 2);
+    }
+    &min-w-#{$i} {
+      min-width: size($i * 2);
+    }
+    &h-#{$i} {
+      height: size($i * 2);
+    }
+    &max-h-#{$i} {
+      max-height: size($i * 2);
+    }
+    &min-h-#{$i} {
+      min-height: size($i * 2);
+    }
+  }
+
+  &h- {
+    &screen {
+      height: 100vh;
+    }
+    &full {
+      height: 100%;
+    }
+  }
+  &min-h- {
+    &screen {
+      height: 100vh;
+    }
+    &full {
+      min-height: 100%;
+    }
+  }
+
+  &w- {
+    &full {
+      width: 100%;
+    }
+  }
+  &max-w- {
+    &full {
+      max-width: 100%;
     }
   }
 }

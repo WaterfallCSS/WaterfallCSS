@@ -2,7 +2,7 @@
 @import '_background';
 @import '_display';
 @import '_flex';
-@import '_text';
+@import '_typography';
 @import '_shadow';
 @import '_sizing';
 @import '_overflow';
@@ -11,7 +11,7 @@
   @include background();
   @include display();
   @include flex();
-  @include text();
+  @include typography();
   @include shadow();
   @include spacing();
   @include sizing();
@@ -22,26 +22,54 @@
   @include group();
 }
 
-.u\@lg\: {
-  @include screen-large() {
-    @include group();
+// Switches the order of the cascading effect of media queries
+// Could be made clever, but for simplist understanding left and if else
+@if ($media-query-prefix == 'max') {
+  .u\@lg\: {
+    @include screen-large() {
+      @include group();
+    }
   }
-}
 
-.u\@md\: {
-  @include screen-medium() {
-    @include group();
+  .u\@md\: {
+    @include screen-medium() {
+      @include group();
+    }
   }
-}
 
-.u\@sm\: {
-  @include screen-small() {
-    @include group();
+  .u\@sm\: {
+    @include screen-small() {
+      @include group();
+    }
   }
-}
 
-.u\@xs\: {
-  @include screen-xsmall() {
-    @include group();
+  .u\@xs\: {
+    @include screen-xsmall() {
+      @include group();
+    }
+  }
+} @else {
+  .u\@xs\: {
+    @include screen-xsmall() {
+      @include group();
+    }
+  }
+
+  .u\@sm\: {
+    @include screen-small() {
+      @include group();
+    }
+  }
+
+  .u\@md\: {
+    @include screen-medium() {
+      @include group();
+    }
+  }
+
+  .u\@lg\: {
+    @include screen-large() {
+      @include group();
+    }
   }
 }

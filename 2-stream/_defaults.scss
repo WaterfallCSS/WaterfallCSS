@@ -1,53 +1,53 @@
 html {
-  font-family: $font-primary;
-  line-height: 1.5;
+	font-family: $font-primary;
+	line-height: 1.5;
 }
 
 html,
 body {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  position: relative;
+	box-sizing: border-box;
+	position: relative;
 }
 
 img {
-  min-width: 100%;
+	min-width: 100%;
 }
 
 textarea {
-  resize: vertical;
+	resize: vertical;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+	color: inherit;
+	opacity: 0.5;
 }
 
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
-  color: inherit;
-  opacity: 0.5;
+	color: inherit;
+	opacity: 0.5;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: inherit;
-  opacity: 0.5;
+	color: inherit;
+	opacity: 0.5;
 }
 
 button,
-[role='button'] {
-  cursor: pointer;
+[role="button"] {
+	cursor: pointer;
 }
 
 table {
-  border-collapse: collapse;
+	border-collapse: collapse;
 }
 
 h1,
@@ -56,13 +56,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: inherit;
-  font-weight: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 }
 
 a {
-  color: inherit;
-  text-decoration: inherit;
+	color: inherit;
+	text-decoration: inherit;
 }
 
 button,
@@ -70,17 +70,17 @@ input,
 optgroup,
 select,
 textarea {
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
+	padding: 0;
+	line-height: inherit;
+	color: inherit;
 }
 
 pre,
 code,
 kbd,
 samp {
-  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
-    monospace;
+	font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
 }
 
 img,
@@ -91,16 +91,20 @@ audio,
 iframe,
 embed,
 object {
-  display: block;
-  vertical-align: middle;
+	display: block;
+	vertical-align: middle;
 }
 
 img,
 video {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 ::selection {
-  background-color: color('primary', 200);
+	background-color: color("primary", 200);
+}
+
+select::-ms-expand {
+	display: none;
 }
